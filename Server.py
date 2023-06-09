@@ -15,10 +15,55 @@ def handle_client(client_socket, client_id):
             break
 
         print(f"Client sent you a message: {message}")
+        handle_math_expression(message)
         client_socket.send("Message received".encode())
 
     client_socket.close()
     print(f"Client with id {client_id} is disconnected")
+
+
+operators = ['+', '/', '*', '-']
+
+
+def handle_math_expression(exp):
+    operator = '+'
+    result = 0
+    print_expression = ''
+    i = 0
+    first_iteration = True
+
+    while i < len(exp):
+        if exp[i] in operators:
+            operator = exp[i]
+            print_expression += operator
+            i += 1
+        else:
+            number = ''
+            while i < len(exp) and exp[i].isdigit():
+                number += exp[i]
+                i += 1
+
+            if number:
+                number = int(number)
+                print_expression += str(number)
+
+                if operator == '+':
+                    result += number
+                    expression = print_expression + '=' + str(round(result))
+                elif operator == '-':
+                    result -= number
+                    expression = print_expression + '=' + str(round(result))
+                elif operator == '*':
+                    result *= number
+                    expression = print_expression + '=' + str(round(result))
+                else:
+                    result /= number
+                    expression = print_expression + '=' + str(round(result))
+
+                if not first_iteration:
+                    print(expression)
+
+                first_iteration = False
 
 
 def start_server():
@@ -36,7 +81,7 @@ def start_server():
     while True:
         client_socket, client_address = server_socket.accept()
 
-        client_id = client_id + 1
+        client_id += 1
 
         client_thread = threading.Thread(
             target=handle_client, args=(client_socket, client_id))

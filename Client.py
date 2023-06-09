@@ -12,7 +12,7 @@ print(init_message)
 
 
 while True:
-    message = input("Input a message for server: ")
+    message = input("Input a math expression for server: ")
 
     client_socket.send(message.encode())
 
