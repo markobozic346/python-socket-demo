@@ -7,7 +7,7 @@ The project is a multithreaded Client-Server application for evaluating mathemat
 
 # Features
 
-- The server listens on TCP port X, where X = student_index_number % 24+2000.
+- The server listens on TCP port X, where X = 2023
 - Clients can connect to the LAN IP address of the server.
 - The server accepts expressions from clients until 'end' is entered.
 - Operators + , -, *, / are supported, with the assumption that all operators have the same priority.
