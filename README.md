@@ -1,36 +1,35 @@
+# Python Socket Exercises
 
-# Python socket demo
+This repository contains exercises with Python sockets. Each folder represents a different exercise and contains the necessary files.
 
-# Description
+## Table of Contents
 
-The project is a multithreaded Client-Server application for evaluating mathematical expressions. The server side is capable of handling multiple clients simultaneously.
+- [Exercise 1](./client-server-password-text/): 
+- [Exercise 2](./multi-thread-math-expressions/): 
+- ...
 
-# Features
+## Getting Started
 
-- The server listens on TCP port X, where X = 2023
-- Clients can connect to the LAN IP address of the server.
-- The server accepts expressions from clients until 'exit' is entered.
-- Operators + , -, *, / are supported, with the assumption that all operators have the same priority.
-- The server evaluates the expressions and sends intermediate results to the clients.
-- The clients receive and display the intermediate results until the initial expression is received.
+To get started with the exercises, follow the instructions below:
 
-# Usage
+1. Clone the repository:
 
-1. Start the server.
-2. Connect the clients to the server using the LAN IP address.
-3. Enter expressions in the client console.
-4. Receive and display the intermediate results.
-5. Enter 'exit' to stop the evaluation.
+```shell
+git clone https://github.com/markobozic346/python-socket-demo
+```
 
-# Example
+2. Checkout to exercise
+```shell
+cd exercise-name
+```
 
-Client input:
+3. Run both server and client (server first)
+```shell
+python Server.py
+```
 
-80-10+100*3/4
+```shell
+python Client.py
+```
 
-Server output:
 
-80-10=70<br />
-80-10+100=170<br />
-80-10+1003=510<br />
-80-10+1003/4=128
