@@ -5,7 +5,8 @@ This repository contains exercises with Python sockets. Each folder represents a
 ## Table of Contents
 
 - [Exercise 1](./client-server-password-text/): 
-- [Exercise 2](./multi-thread-math-expressions/): 
+- [Exercise 2](./client-server-password-multiple-tries/): 
+- [Exercise 3](./multi-thread-math-expressions/): 
 - ...
 
 ## Getting Started
